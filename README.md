@@ -53,7 +53,7 @@ The system leverages advanced natural language processing and semantic search ca
 
 ### 🌐 Application Layer
 
-- **Flask**: RESTful API backend services
+- **Flask+FastAPI**: RESTful API backend services
 - **HTML5/CSS3/JavaScript**: Responsive web interface
 - **Modular Design**: Separation of concerns architecture
 
@@ -288,7 +288,7 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) file for 
 
 **Ragnang Newende Yanis Axel DABO**  
 📧 Email: <axeldaboworkplace@gmail.com>  
-🔗 GitHub: [@yourusername](https://github.com/yourusername)
+🔗 linkedin: [Ragnang Newende Yanis Axel](https://www.linkedin.com/in/y4nnthedev777)
 
 ## Acknowledgments
 

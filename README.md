@@ -2,7 +2,7 @@
 
 **An advanced RAG-powered medical chatbot delivering accurate health information through intelligent retrieval-augmented generation.**
 
-[![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://python.org)
+[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://python.org)
 [![LangChain](https://img.shields.io/badge/LangChain-Framework-green.svg)](https://langchain.com)
 [![Pinecone](https://img.shields.io/badge/Pinecone-Vector%20DB-purple.svg)](https://pinecone.io)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -39,7 +39,7 @@ The system leverages advanced natural language processing and semantic search ca
 
 #### Core Framework
 
-- **Python 3.13**: Primary development language
+- **Python 3.12+**: Primary development language
 - **LangChain**: RAG orchestration and LLM integration framework
 - **OpenRouter API**: Multi-model LLM access layer
 - **Qwen3 2.5B & A22B Instruct 2507**: State-of-the-art language models

@@ -97,7 +97,7 @@ vitali/
 
 ### Prerequisites
 
-- Python 3.13 or higher
+- Python 3.12 or higher
 - Anaconda/Miniconda environment manager
 - Git version control
 - Pinecone account with API access
@@ -115,7 +115,7 @@ cd vitali-medical-chatbot
 ##### 2. Environment Creation
 
 ```bash
-conda create -n vitali python=3.13
+conda create -n vitali python=3.12
 conda activate vitali
 ```
 

@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from src.helper import load_pdf_files, text_split, filter_to_minimal_docs, downloads_embeddings
+from src.helper import load_pdf_files, text_split, filter_to_minimal_docs, download_embeddings
 from pinecone import Pinecone
 from pinecone import ServerlessSpec
 from langchain_pinecone import PineconeVectorStore
@@ -20,7 +20,7 @@ filtered_data = filter_to_minimal_docs(extracted_data)
 text_chunks = text_split(filtered_data)
 
 
-embeddings = downloads_embeddings()
+embeddings = download_embeddings()
 
 
 pinecone_api_key = PINECONE_API_KEY

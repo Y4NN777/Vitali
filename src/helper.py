@@ -67,7 +67,7 @@ def text_split(extracted_data):
 
 
 
-def downloads_embeddings():
+def download_embeddings():
     """
     Download and return the HugginFace embedding model
     """

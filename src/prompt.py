@@ -19,5 +19,6 @@ system_prompt = (
     
     "GOAL:\n"
     "Explain medical concepts or information based strictly on the provided context. "
-    "Ensure every answer is informative, reliable, and safe for general health education purposes."
+    "Ensure every answer is informative, reliable, and safe for general health education purposes.\n\n"
+    "{context}"
 )

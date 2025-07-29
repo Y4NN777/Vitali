@@ -15,9 +15,9 @@ os.environ["OPENROUTER_API_KEY"] = OPENROUTER_API_KEY
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 
 
-extracted_data = load_pdf_files(data_dir="data/")
-filter_data = filter_to_minimal_docs(extracted_data)
-text_chunks = text_split(filter_data)
+extracted_data = load_pdf_files(data_dir='data/')
+filtered_data = filter_to_minimal_docs(extracted_data)
+text_chunks = text_split(filtered_data)
 
 
 embeddings = downloads_embeddings()

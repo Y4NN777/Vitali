@@ -45,7 +45,7 @@ The system leverages advanced natural language processing and semantic search ca
 - **Python 3.12+**: Primary development language
 - **LangChain**: RAG orchestration and LLM integration framework
 - **OpenRouter API**: Multi-model LLM access layer
-- **dolphin-mistral-24b-venice-edition**: State-of-the-art language models
+- **Qwen3 2.5B & A22B Instruct 2507**: State-of-the-art language models
 
 #### Knowledge & Retrieval
 

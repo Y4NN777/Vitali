@@ -24,8 +24,8 @@ os.environ["OPENROUTER_API_KEY"] = OPENROUTER_API_KEY
 
 embeddings = download_embeddings()
 
-index_name = "vitali-index" 
-# Embed each chunk and upsert the embeddings into your Pinecone index.
+index_name = "vitali-index"
+# Initialize Pinecone vector store with existing index
 docsearch = PineconeVectorStore.from_existing_index(
     index_name=index_name,
     embedding=embeddings
@@ -37,8 +37,8 @@ docsearch = PineconeVectorStore.from_existing_index(
 retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":3})
 
 chat_model = ChatOpenAI(
-    model="qwen/qwen3-235b-a22b-2507:free",  
-    openai_api_key=os.getenv("OPENROUTER_API_KEY"),      # Correct key parameter
+    model="qwen/qwen3-235b-a22b-2507:free",
+    openai_api_key=os.getenv("OPENROUTER_API_KEY"),
     openai_api_base="https://openrouter.ai/api/v1",
 )
 
@@ -64,9 +64,7 @@ def index():
 def chat():
     msg = request.form["msg"]
     input = msg
-    print(input)
     response = rag_chain.invoke({"input": msg})
-    print("Response : ", response["answer"])
     return str(response["answer"])
 
 

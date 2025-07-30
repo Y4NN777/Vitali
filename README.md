@@ -6,7 +6,7 @@
 [![LangChain](https://img.shields.io/badge/LangChain-Framework-green.svg)](https://langchain.com)
 [![Pinecone](https://img.shields.io/badge/Pinecone-Vector%20DB-purple.svg)](https://pinecone.io)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Active%20Development-orange.svg)](https://github.com/yourusername/vitali-medical-chatbot)
+[![Status](https://img.shields.io/badge/Status-Active%20Development-orange.svg)](https://github.com/Y4NN777/vitali-medical-chatbot)
 
 ## Overview
 
@@ -53,8 +53,8 @@ The system leverages advanced natural language processing and semantic search ca
 
 ### 🌐 Application Layer
 
-- **Flask+FastAPI**: RESTful API backend services
-- **HTML5/CSS3/JavaScript**: Responsive web interface
+- **Flask**: RESTful API backend services
+- **HTML5/Tailwind CSS/JavaScript**: Responsive web interface with modern styling
 - **Modular Design**: Separation of concerns architecture
 
 ### ☁️ Infrastructure & Deployment

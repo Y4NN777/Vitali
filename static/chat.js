@@ -19,6 +19,14 @@ function initChat() {
     voiceBtn = document.getElementById('voiceBtn');
     exportChat = document.getElementById('exportChat');
 
+    // Load saved theme FIRST
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') {
+        isDarkMode = true;
+        document.documentElement.classList.add('dark');
+        themeToggle.querySelector('i').className = 'fas fa-sun';
+    }
+
     // Auto-resize textarea
     messageInput.addEventListener('input', function() {
         this.style.height = 'auto';
@@ -70,12 +78,20 @@ function initChat() {
         }
     });
 
-    // Theme toggle
+    // Theme Toggle
     themeToggle.addEventListener('click', () => {
         isDarkMode = !isDarkMode;
-        document.documentElement.classList.toggle('dark', isDarkMode);
-        const icon = themeToggle.querySelector('i');
-        icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+        const html = document.documentElement;
+        
+        if (isDarkMode) {
+            html.classList.add('dark');
+            themeToggle.querySelector('i').className = 'fas fa-sun';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            html.classList.remove('dark');
+            themeToggle.querySelector('i').className = 'fas fa-moon';
+            localStorage.setItem('theme', 'light');
+        }
     });
 
     // Emergency button
@@ -90,7 +106,7 @@ function initChat() {
     fileInput.addEventListener('change', (e) => {
         if (e.target.files.length > 0) {
             const fileName = e.target.files[0].name;
-            addMessage(`📎 Attached file: ${fileName}`, 'user');
+            addMessage(`Attached file: ${fileName}`, 'user');
             setTimeout(() => {
                 addMessage('I can see you\'ve attached a file. Please note that I can provide general information about medical documents, but cannot replace professional medical analysis.', 'bot');
             }, 1000);
@@ -103,7 +119,7 @@ function initChat() {
         voiceBtn.classList.toggle('text-danger-600');
         
         if (voiceBtn.classList.contains('bg-danger-100')) {
-            addMessage('🎤 Voice recording started (simulated)', 'user');
+            addMessage('Voice recording started (simulated)', 'user');
             setTimeout(() => {
                 voiceBtn.classList.remove('bg-danger-100', 'text-danger-600');
                 voiceBtn.classList.add('bg-gray-100');
@@ -183,7 +199,7 @@ function addMessage(text, sender) {
             <div class="flex-1"></div>
             <div class="flex-shrink-0 max-w-xs lg:max-w-md">
                 <div class="bg-gradient-to-r from-medical-500 to-medical-600 text-white rounded-2xl rounded-tr-md p-4 shadow-lg">
-                    <p>${text}</p>
+                    <p class="text-white">${text}</p>
                 </div>
                 <div class="flex justify-end items-center mt-2 space-x-2">
                     <p class="text-xs text-gray-500 dark:text-gray-400">${time}</p>
@@ -206,8 +222,8 @@ function addMessage(text, sender) {
                 </div>
             </div>
             <div class="flex-1">
-                <div class="bg-gradient-to-r from-medical-50 to-medical-100 dark:from-gray-700 dark:to-gray-800 rounded-2xl rounded-tl-md p-4 shadow-sm border border-medical-200 dark:border-gray-600 max-w-xs lg:max-w-md">
-                    <p class="text-white-800 dark:text-white-200">${text}</p>
+                <div class="bot-message bg-gradient-to-r from-medical-50 to-medical-100 dark:from-slate-700 dark:to-slate-600 rounded-2xl rounded-tl-md p-4 shadow-sm border border-medical-200 dark:border-slate-500 max-w-xs lg:max-w-md">
+                    <p class="text-gray-800 dark:text-gray-100">${text}</p>
                 </div>
                 <div class="flex items-center mt-2 space-x-2">
                     <p class="text-xs text-gray-500 dark:text-gray-400 ml-1">${time}</p>

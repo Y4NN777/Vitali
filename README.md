@@ -9,6 +9,9 @@
 [![Status](https://img.shields.io/badge/Status-Active%20Development-orange.svg)](https://github.com/Y4NN777/vitali-medical-chatbot)
 
 ## Overview
+<img width="454" height="988" alt="image" src="https://github.com/user-attachments/assets/18b59ca5-e8ec-4cab-a767-e4e860fda59c" />
+<img width="454" height="988" alt="image" src="https://github.com/user-attachments/assets/15573b98-88aa-415e-97bd-a4e716cece95" />
+
 
 Vitali is a sophisticated medical information system built on **Retrieval-Augmented Generation (RAG)** architecture. By combining large language models with a comprehensive medical knowledge base through vector similarity search, Vitali provides accurate, contextual responses to health-related queries while maintaining information reliability and safety standards.
 

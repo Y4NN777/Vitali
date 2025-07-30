@@ -9,9 +9,9 @@
 [![Status](https://img.shields.io/badge/Status-Active%20Development-orange.svg)](https://github.com/Y4NN777/vitali-medical-chatbot)
 
 ## Overview
+
 <img width="404" height="988" alt="image" src="https://github.com/user-attachments/assets/18b59ca5-e8ec-4cab-a767-e4e860fda59c" />
 <img width="404" height="988" alt="image" src="https://github.com/user-attachments/assets/15573b98-88aa-415e-97bd-a4e716cece95" />
-
 
 Vitali is a sophisticated medical information system built on **Retrieval-Augmented Generation (RAG)** architecture. By combining large language models with a comprehensive medical knowledge base through vector similarity search, Vitali provides accurate, contextual responses to health-related queries while maintaining information reliability and safety standards.
 
@@ -45,7 +45,7 @@ The system leverages advanced natural language processing and semantic search ca
 - **Python 3.12+**: Primary development language
 - **LangChain**: RAG orchestration and LLM integration framework
 - **OpenRouter API**: Multi-model LLM access layer
-- **Qwen3 2.5B & A22B Instruct 2507**: State-of-the-art language models
+- **qwen/qwen3-30b-a3b:free**: State-of-the-art language models
 
 #### Knowledge & Retrieval
 
@@ -111,7 +111,7 @@ vitali/
 ##### 1. Repository Setup
 
 ```bash
-git clone https://github.com/yourusername/vitali-medical-chatbot.git
+git clone https://github.com/Y4NN777/vitali-medical-chatbot.git
 cd vitali-medical-chatbot
 ```
 
@@ -141,7 +141,7 @@ PINECONE_API_KEY=your_pinecone_api_key
 PINECONE_ENVIRONMENT=your_pinecone_environment
 PINECONE_INDEX_NAME=medical-knowledge-base
 
-# Application Configuration
+# Application Configuration (Optional)
 FLASK_SECRET_KEY=your_secure_secret_key
 FLASK_ENV=development
 ```
@@ -225,7 +225,7 @@ jupyter notebook research/trials.ipynb
 ```bash
 # EC2 instance preparation
 sudo apt update && sudo apt upgrade -y
-sudo apt install python3.13 python3-pip nginx -y
+sudo apt install python3.12 python3-pip nginx -y
 
 # Application deployment
 git clone https://github.com/yourusername/vitali-medical-chatbot.git
@@ -332,6 +332,46 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) file for 
 - [ ] **Mobile Applications**: Native iOS/Android implementations
 - [ ] **Healthcare Integration**: EHR and clinical system connectivity
 - [ ] **Regulatory Compliance**: HIPAA and medical data standards
+
+## Troubleshooting
+
+### Production Deployment Issues
+
+If the application works locally but encounters issues in production, particularly with the 404 error related to the Qwen model, consider the following:
+
+1. **Docker Image**: Ensure the Docker image is built with the latest code changes.
+
+   ```bash
+   # Rebuild the Docker image
+   docker build -t vitali-medical-chatbot .
+   ```
+
+2. **Environment Variables**: Verify that all required environment variables are correctly set in production.
+
+   ```bash
+   # Check if environment variables are set
+   echo $OPENROUTER_API_KEY
+   echo $PINECONE_API_KEY
+   ```
+
+3. **OpenRouter API Key**: Ensure the OpenRouter API key is valid and has access to the `qwen/qwen3-235b-a22b-2507:free` model.
+   - Check the OpenRouter dashboard for API key validity
+   - Verify model availability in your region
+
+4. **Model Availability**: The model might not be available in the production region.
+   - Check OpenRouter documentation for region-specific model availability
+   - Consider using an alternative model if the current one is not available
+
+5. **Network Issues**: Production environment might have network restrictions.
+   - Ensure outbound connections to OpenRouter API are allowed
+   - Check firewall rules and security groups
+
+6. **Logs and Monitoring**: Check application logs for more detailed error information.
+
+   ```bash
+   # Check Docker container logs
+   docker logs <container_id>
+   ```
 
 ---
 

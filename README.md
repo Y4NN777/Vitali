@@ -1,6 +1,6 @@
 # Vitali - Medical Chatbot
 
-**An advanced RAG-powered medical chatbot delivering accurate health information through intelligent retrieval-augmented generation.**
+**An simple RAG-powered medical chatbot delivering accurate health information through intelligent retrieval-augmented generation.**
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://python.org)
 [![LangChain](https://img.shields.io/badge/LangChain-Framework-green.svg)](https://langchain.com)
@@ -13,7 +13,7 @@
 <img width="404" height="988" alt="image" src="https://github.com/user-attachments/assets/18b59ca5-e8ec-4cab-a767-e4e860fda59c" />
 <img width="404" height="988" alt="image" src="https://github.com/user-attachments/assets/15573b98-88aa-415e-97bd-a4e716cece95" />
 
-Vitali is a sophisticated medical information system built on **Retrieval-Augmented Generation (RAG)** architecture. By combining large language models with a comprehensive medical knowledge base through vector similarity search, Vitali provides accurate, contextual responses to health-related queries while maintaining information reliability and safety standards.
+Vitali is a accurate medical information system built on **Retrieval-Augmented Generation (RAG)** architecture. By combining large language models with a comprehensive medical knowledge base through vector similarity search, Vitali provides accurate, contextual responses to health-related queries while maintaining information reliability and safety standards.
 
 The system leverages advanced natural language processing and semantic search capabilities to retrieve relevant medical information from its knowledge base before generating responses, ensuring both accuracy and relevance in medical guidance.
 

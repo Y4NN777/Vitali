@@ -1,6 +1,6 @@
 # Vitali - Medical Chatbot
 
-**An simple RAG-powered medical chatbot delivering accurate health information through intelligent retrieval-augmented generation.**
+**An simple RAG-powered medical chatbot delivering accurate health information through intelligent retrieval-augmented generation. Built as part of my exploration of Generative AI. Based set up.. Enhancements planned**
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://python.org)
 [![LangChain](https://img.shields.io/badge/LangChain-Framework-green.svg)](https://langchain.com)
@@ -17,16 +17,16 @@ Vitali is a accurate medical information system built on **Retrieval-Augmented G
 
 The system leverages advanced natural language processing and semantic search capabilities to retrieve relevant medical information from its knowledge base before generating responses, ensuring both accuracy and relevance in medical guidance.
 
-> **⚠️ Medical Disclaimer**: This system provides educational health information only and does not constitute medical advice, diagnosis, or treatment recommendations. Always consult qualified healthcare professionals for medical concerns.
+> **⚠️ Medical Disclaimer**: This app provides educational health information only and does not constitute medical advice, diagnosis, or treatment recommendations. Always consult qualified healthcare professionals for medical concerns.
 
 ## Key Features
 
 ### Core RAG Architecture
 
-- **🔍 Semantic Search**: Vector-based retrieval using Pinecone for precise information matching
-- **📚 Knowledge Base Integration**: Comprehensive medical database with embedded representations
-- **🤖 Intelligent Generation**: Context-aware response generation using retrieved medical knowledge
-- **⚡ Real-time Processing**: Efficient query processing with optimized retrieval pipelines
+- **Semantic Search**: Vector-based retrieval using Pinecone for precise information matching
+- **Knowledge Base Integration**: Comprehensive medical database with embedded representations
+- **Intelligent Generation**: Context-aware response generation using retrieved medical knowledge
+- **Real-time Processing**: Efficient query processing with optimized retrieval pipelines and performant production database
 
 #### System Capabilities
 
@@ -54,13 +54,13 @@ The system leverages advanced natural language processing and semantic search ca
 - **Similarity Search**: Cosine similarity-based document retrieval
 - **Knowledge Base**: Curated medical information corpus
 
-### 🌐 Application Layer
+###  Application Layer
 
 - **Flask**: RESTful API backend services
 - **HTML5/Tailwind CSS/JavaScript**: Responsive web interface with modern styling
 - **Modular Design**: Separation of concerns architecture
 
-### ☁️ Infrastructure & Deployment
+###  Infrastructure & Deployment ( DOWN Actually )
 
 - **AWS EC2**: Cloud computing platform
 - **CI/CD Pipeline**: Automated deployment workflow
@@ -195,60 +195,26 @@ jupyter notebook research/trials.ipynb
 
 ### Core Components
 
-**📄 helper.py**: RAG Implementation
+** helper.py**: Simple RAG Implementation
 
 - Vector embedding generation
 - Pinecone database operations
 - Document retrieval and ranking
 - Context preparation utilities
 
-**📝 prompt.py**: Context Management
+** prompt.py**: Context and Prompt Management
 
 - Medical prompt templates
 - Context window optimization
 - Response formatting
 - Safety constraint implementation
 
-**🌐 app.py**: API Integration
+** app.py**: Simple API Integration
 
 - Flask route definitions
 - RAG pipeline orchestration
 - Request/response handling
 - Error management
-
-## Production Deployment
-
-### AWS EC2 Configuration
-
-#### Infrastructure Setup
-
-```bash
-# EC2 instance preparation
-sudo apt update && sudo apt upgrade -y
-sudo apt install python3.12 python3-pip nginx -y
-
-# Application deployment
-git clone https://github.com/yourusername/vitali-medical-chatbot.git
-cd vitali-medical-chatbot
-pip install -r requirements.txt
-```
-
-#### Environment Variables
-
-```bash
-export OPENROUTER_API_KEY="production_api_key"
-export PINECONE_API_KEY="production_pinecone_key"
-export PINECONE_ENVIRONMENT="production"
-export FLASK_ENV="production"
-```
-
-#### Process Management
-
-```bash
-# Using systemd for service management
-sudo systemctl enable vitali-chatbot
-sudo systemctl start vitali-chatbot
-```
 
 ## Performance Optimization
 
@@ -287,12 +253,6 @@ sudo systemctl start vitali-chatbot
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) file for complete terms.
 
-## Project Maintainer
-
-**Ragnang Newende Yanis Axel DABO**  
-📧 Email: <axeldaboworkplace@gmail.com>  
-🔗 linkedin: [Ragnang Newende Yanis Axel](https://www.linkedin.com/in/y4nnthedev777)
-
 ## Acknowledgments
 
 ### Technology Partners
@@ -307,71 +267,6 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) file for 
 - Healthcare professionals providing domain validation
 - Medical literature and knowledge base contributors
 - Open-source medical information initiatives
-
-## Support & Documentation
-
-**📋 Issues**: [GitHub Issues Tracker](https://github.com/yourusername/vitali-medical-chatbot/issues)  
-**📖 Documentation**: Comprehensive guides in `/docs` directory  
-**💬 Community**: Developer discussions and Q&A  
-**🔧 API Reference**: Complete endpoint documentation
-
-## Roadmap & Future Development
-
-### Planned RAG Enhancements
-
-- [ ] **Multi-modal RAG**: Integration of medical images and documents
-- [ ] **Specialized Embeddings**: Domain-specific medical embeddings
-- [ ] **Dynamic Knowledge Updates**: Real-time medical literature integration
-- [ ] **Federated RAG**: Distributed knowledge base architecture
-- [ ] **Explainable Retrieval**: Source attribution and confidence scoring
-
-### System Expansion
-
-- [ ] **Multi-language Support**: Localized medical knowledge bases
-- [ ] **API Ecosystem**: Developer-friendly REST API
-- [ ] **Mobile Applications**: Native iOS/Android implementations
-- [ ] **Healthcare Integration**: EHR and clinical system connectivity
-- [ ] **Regulatory Compliance**: HIPAA and medical data standards
-
-## Troubleshooting
-
-### Production Deployment Issues
-
-If the application works locally but encounters issues in production, particularly with the 404 error related to the Qwen model, consider the following:
-
-1. **Docker Image**: Ensure the Docker image is built with the latest code changes.
-
-   ```bash
-   # Rebuild the Docker image
-   docker build -t vitali-medical-chatbot .
-   ```
-
-2. **Environment Variables**: Verify that all required environment variables are correctly set in production.
-
-   ```bash
-   # Check if environment variables are set
-   echo $OPENROUTER_API_KEY
-   echo $PINECONE_API_KEY
-   ```
-
-3. **OpenRouter API Key**: Ensure the OpenRouter API key is valid and has access to the `qwen/qwen3-235b-a22b-2507:free` model.
-   - Check the OpenRouter dashboard for API key validity
-   - Verify model availability in your region
-
-4. **Model Availability**: The model might not be available in the production region.
-   - Check OpenRouter documentation for region-specific model availability
-   - Consider using an alternative model if the current one is not available
-
-5. **Network Issues**: Production environment might have network restrictions.
-   - Ensure outbound connections to OpenRouter API are allowed
-   - Check firewall rules and security groups
-
-6. **Logs and Monitoring**: Check application logs for more detailed error information.
-
-   ```bash
-   # Check Docker container logs
-   docker logs <container_id>
-   ```
 
 ---
 

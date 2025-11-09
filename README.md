@@ -184,15 +184,6 @@ Access the application at `http://localhost:5000`
 
 **Response**: Detailed information about cardiovascular warning signs based on retrieved medical literature
 
-## Development & Research
-
-### RAG Experimentation
-
-```bash
-# Access research notebook for RAG optimization
-jupyter notebook research/trials.ipynb
-```
-
 ### Core Components
 
 ** helper.py**: Simple RAG Implementation
@@ -215,31 +206,6 @@ jupyter notebook research/trials.ipynb
 - RAG pipeline orchestration
 - Request/response handling
 - Error management
-
-## Performance Optimization
-
-### RAG Efficiency Measures
-
-- **Vector Caching**: Frequently accessed embeddings cached in memory
-- **Batch Processing**: Multiple queries processed simultaneously
-- **Index Optimization**: Pinecone index tuned for medical domain
-- **Context Pruning**: Intelligent context window management
-
-### Monitoring & Analytics
-
-- Response accuracy tracking
-- Query processing latency measurement
-- Vector search performance metrics
-- Knowledge base coverage analysis
-
-## Contributing Guidelines
-
-### Development Standards
-
-- **Code Quality**: PEP 8 compliance with type hints
-- **RAG Testing**: Vector retrieval accuracy validation
-- **Documentation**: Comprehensive function documentation
-- **Medical Safety**: Content accuracy verification
 
 ### Contribution Process
 
